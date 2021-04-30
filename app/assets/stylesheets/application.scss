@@ -16,3 +16,7 @@
 
 
 @import "bulma";
+
+.notification:not(:last-child){
+	margin-bottom: 0;
+}
