@@ -13,11 +13,13 @@ class RecipesController < ApplicationController
   end
   
   def create
-    @recipe = Recipe.new(recipe_params)
-    @recipe.user_id = current_user.id 
-    @recipe.save
-    redirect_to recipe_path(@recipe)
-  end 
+    @recipe = current_user.recipes.build(recipe_params)
+    if @recipe.save
+      redirect_to recipe_path(@recipe), notice: "レシピを投稿しました。"
+    else
+      render :new
+    end
+  end
 
   def edit
     @recipe = Recipe.find(params[:id])
@@ -34,9 +36,12 @@ class RecipesController < ApplicationController
   
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe)
-  end 
+    if @recipe.update(recipe_params)
+      redirect_to recipe_path(@recipe), notice: "レシピを更新しました。"
+    else
+      render :edit
+    end
+  end
   
   
   
