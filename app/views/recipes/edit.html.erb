@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        レシピ編集
+        ギア編集
       </h1>
     </div>
   </div>
@@ -25,12 +25,12 @@
       <div class="column is-6">
         <%= form_for @recipe do |f| %>
           <div class="field">
-            <%= f.label :title, "レシピ名", class: "label" %>
+            <%= f.label :title, "ギア名", class: "label" %>
             <%= f.text_field :title, class: "input" %>
           </div>
 
           <div class="field">
-            <%= f.label :body, "作り方", class: "label" %>
+            <%= f.label :body, "説明（メーカー、軟式or硬式、学年など）", class: "label" %>
             <%= f.text_area :body, class: "textarea" %>
           </div>
 
