@@ -22,7 +22,7 @@
       </div>
     <% end %>
 
-    <nav class="navbar is-warning">
+    <nav class="navbar is-info">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-4" style="font-family: cursive;">BaseballGears</h1>
@@ -37,23 +37,23 @@
       <% if user_signed_in? %>
         <div id="navbarExampleTransparentExample" class="navbar-menu">
           <div class="navbar-item">
-            <%= link_to "ギア一覧", recipes_path, class: "navbar-item button is-warning is-light" %>
+            <%= link_to "ギア一覧", recipes_path, class: "navbar-item button is-link is-light" %>
           </div>
           <div class="navbar-item">
-            <%= link_to "新規投稿", new_recipe_path, class: "navbar-item button is-warning is-light" %>
+            <%= link_to "新規投稿", new_recipe_path, class: "navbar-item button is-link is-light" %>
           </div>
 
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
-                  <%= link_to "プレイヤー一覧", users_path, class: " button is-warning is-light" %>
+                  <%= link_to "プレイヤー一覧", users_path, class: " button is-link is-light" %>
                 </p>
                 <p class="control">
-                  <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
+                  <%= link_to "マイページ", user_path(current_user), class: "button is-link is-light" %>
                 </p>
                 <p class="control">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-success" %>
                 </p>
               </div>
             </div>
@@ -62,19 +62,19 @@
       <% else %>
         <div id="navbarExampleTransparentExample" class="navbar-menu">
           <div class="navbar-item">
-            <%= link_to "ギア一覧", recipes_path, class: "navbar-item button is-warning is-light" %>
+            <%= link_to "ギア一覧", recipes_path, class: "navbar-item button is-link is-light" %>
           </div>
           <div class="navbar-item">
-            <%= link_to "プレイヤー一覧", users_path, class: "navbar-item button is-warning is-light" %>
+            <%= link_to "プレイヤー一覧", users_path, class: "navbar-item button is-link is-light" %>
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
-                  <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
+                  <%= link_to "ログイン", new_user_session_path, class: "button is-success" %>
                 </p>
                 <p class="control">
-                  <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
+                  <%= link_to "新規登録", new_user_registration_path, class: "button is-success" %>
                 </p>
               </div>
             </div>
